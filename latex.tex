@@ -1,0 +1,80 @@
+\documentclass[10pt,a4paper]{report}
+%
+%document classes:
+%article 	For articles in scientific journals, presentations, short reports, program documentation, invitations, ...
+%IEEEtran 	For articles with the IEEE Transactions format.
+%proc 	A class for proceedings based on the article class.
+%minimal 	Is as small as it can get. It only sets a page size and a base font. It is mainly used for debugging purposes.
+%report 	For longer reports containing several chapters, small books, thesis, ...
+%book 	For real books.
+%slides 	For slides. The class uses big sans serif letters.
+%memoir 	For changing sensibly the output of the document. It is based on the book class, but you can create any kind of document with it [1]
+%letter 	For writing letters.
+%beamer 	For writing presentations (see LaTeX/Presentations).
+%moderncv       For writing CVs.
+%plus ext*
+%
+%options:
+%10pt, 11pt, 12pt 	Sets the size of the main font in the document. If no option is specified, 10pt is assumed.
+%a4paper, letterpaper,... 	Defines the paper size. The default size is letterpaper; However, many European distributions of TeX now come pre-set for A4, not Letter, and this is also true of all distributions of pdfLaTeX. Besides that, a5paper, b5paper, executivepaper, and legalpaper can be specified.
+%fleqn 	Typesets displayed formulas left-aligned instead of centered.
+%leqno 	Places the numbering of formulas on the left hand side instead of the right.
+%titlepage, notitlepage 	Specifies whether a new page should be started after the document title or not. The article class does not start a new page by default, while report and book do.
+%twocolumn 	Instructs LaTeX to typeset the document in two columns instead of one.
+%twoside, oneside 	Specifies whether double or single sided output should be generated. The classes article and report are single sided and the book class is double sided by default. Note that this option concerns the style of the document only. The option twoside does not tell the printer you use that it should actually make a two-sided printout.
+%landscape 	Changes the layout of the document to print in landscape mode.
+%openright, openany 	Makes chapters begin either only on right hand pages or on the next page available. This does not work with the article class, as it does not know about chapters. The report class by default starts chapters on the next page available and the book class starts them on right hand pages.
+%draft 	makes LaTeX indicate hyphenation and justification problems with a small square in the right-hand margin of the problem line so they can be located quickly by a human. It also suppresses the inclusion of images and shows only a frame where they would normally occur.
+
+\usepackage[warn]{mathtext}          % русские буквы в формулах, с предупреждением
+\usepackage[T1,T2A]{fontenc}            % внутренняя кодировка  TeX
+\usepackage[utf8]{inputenc}         % кодовая страница документа
+\usepackage[russian, english]{babel} % локализация и переносы
+
+
+\usepackage{indentfirst}   % русский стиль: отступ первого абзаца раздела
+\usepackage{misccorr}      % точка в номерах заголовков
+\usepackage{cmap}          % русский поиск в pdf
+\usepackage{graphicx}      % Работа с графикой \includegraphics{}
+\usepackage{psfrag}        % Замена тагов на eps картинкаx
+\usepackage{caption2}      % Работа с подписями для фигур, таблиц и пр.
+\usepackage{fancyhdr}      % Для работы с колонтитулами
+\usepackage{multirow}      % Аналог multicolumn для строк
+\usepackage{ltxtable}      % Микс tabularx и longtable
+\usepackage{paralist}      % Списки с отступом только в первой строчке
+\usepackage[usenames,dvipsnames]{color} % названия цветов
+%\usepackage{longtable}
+%\usepackage{tabularx}
+%\usepackage[perpage]{footmisc} % Нумерация сносок на каждой странице с 1
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+% Задаем отступы: слева 30 мм, справа 10 мм, сверху до колонтитула 10 мм
+% снизу 25 мм
+\usepackage[top=10mm, left=30mm, right=10mm, bottom=25mm]{geometry}
+% Нумерация формул, картинок и таблиц по секциям
+%\numberwithin{equation}{section}
+%\numberwithin{table}{section}
+%\numberwithin{figure}{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Font list is here: http://www.tug.dk/FontCatalogue/
+%\include{font}
+%\renewcommand{\rmdefault}{cmr}    %Выбор шрифта
+%\renewcommand{\sfdefault}{cmss}   %
+%\renewcommand{\ttdefault}{cmtt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setcounter{page}{0}
+\hyphenpenalty=500
+\usepackage{listings}      % листинги
+\lstset{
+  basicstyle=\ttfamily\small,
+  frame=single,
+  breaklines=true,
+  inputencoding=utf8,
+  extendedchars=\true,
+  postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
